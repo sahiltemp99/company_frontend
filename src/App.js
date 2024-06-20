@@ -25,8 +25,10 @@ const Company = () => {
     }, [companyId]);
 
     const sendReply = () => {
-        socket.emit('sendReply', { senderId: projectId, receiverId: userId, companyId: companyId, content });
-        setContent('');
+        if (userId != '') {
+            socket.emit('sendReply', { senderId: projectId, receiverId: userId, companyId: companyId, content });
+            setContent('');
+        }
     };
 
     return (
