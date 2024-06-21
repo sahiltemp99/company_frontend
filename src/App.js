@@ -35,6 +35,7 @@ const Company = () => {
         <div>
             <h2>Company Messaging</h2>
             <input type="text" value={companyId} readOnly />
+            <input type="text" value={projectId} readOnly />
             <input
                 type="text"
                 placeholder="User ID"
