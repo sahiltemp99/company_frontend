@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
 // const socket = io('http://localhost:4000');
-const socket = io('https://avatarapp-backend-vxgd.onrender.com');
+const socket = io('https://virtually-human-api.onrender.com');
 
 const Company = () => {
     const [companyId, setCompanyId] = useState('company_1');
