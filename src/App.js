@@ -13,10 +13,14 @@ const Company = () => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        socket.emit('joinRoom', { senderId: projectId, receiverId: userId });
+        socket.emit('joinRoom', { senderId: projectId });
 
         socket.on('receiveMessage', (message) => {
             setMessages((prevMessages) => [...prevMessages, message]);
+        });
+
+        socket.on('errorMessage', (errorMessage) => {
+            console.log(errorMessage.error);
         });
 
         return () => {
